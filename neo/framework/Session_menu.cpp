@@ -309,12 +309,7 @@ void idSessionLocal::SetMainMenuGuiVars( void ) {
 		guiMainMenu->SetStateString( "inGame", "0" );
 	}
 
-	SetCDKeyGuiVars( );
-#ifdef ID_DEMO_BUILD
-	guiMainMenu->SetStateString( "nightmare", "0" );
-#else
 	guiMainMenu->SetStateString( "nightmare", cvarSystem->GetCVarBool( "g_nightmare" ) ? "1" : "0" );
-#endif
 	guiMainMenu->SetStateString( "browser_levelshot", "guis/assets/splash/pdtempa" );
 
 	SetMainMenuSkin();
@@ -1638,17 +1633,4 @@ void idSessionLocal::HandleNoteCommands( const char *menuCommand ) {
 		cmdSystem->BufferCommandText( CMD_EXEC_NOW, "closeViewNotes\n" );
 		cvarSystem->SetCVarBool( "con_noPrint", bCon );
 	}
-}
-
-/*
-===============
-idSessionLocal::SetCDKeyGuiVars
-===============
-*/
-void idSessionLocal::SetCDKeyGuiVars( void ) {
-	if ( !guiMainMenu ) {
-		return;
-	}
-	guiMainMenu->SetStateString( "str_d3key_state", common->GetLanguageDict()->GetString( va( "#str_071%d", 86 + cdkey_state ) ) );
-	guiMainMenu->SetStateString( "str_xpkey_state", common->GetLanguageDict()->GetString( va( "#str_071%d", 86 + xpkey_state ) ) );
 }

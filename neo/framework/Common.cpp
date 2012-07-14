@@ -1088,7 +1088,6 @@ void idCommonLocal::WriteConfiguration( void ) {
 	com_developer.SetBool( false );
 
 	WriteConfigToFile( CONFIG_FILE );
-	session->WriteCDKey( );
 
 	// restore the developer cvar
 	com_developer.SetBool( developer );
