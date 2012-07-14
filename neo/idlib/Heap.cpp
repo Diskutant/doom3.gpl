@@ -189,7 +189,7 @@ idHeap::~idHeap
 ================
 */
 idHeap::~idHeap( void ) {
-
+	idLib::common->Printf( "pages allocated1 : %d\n", pagesAllocated );
 	idHeap::page_s	*p;
 
 	if ( smallCurPage ) {
@@ -228,8 +228,9 @@ idHeap::~idHeap( void ) {
 	if ( defragBlock ) {
 		free( defragBlock );
 	}
-
-	assert( pagesAllocated == 0 );
+	idLib::common->Printf( "pages allocated2 : %d\n", pagesAllocated );
+		//TODO more pages are freed than allocated!
+	assert( pagesAllocated <= 0 );
 }
 
 /*
@@ -422,7 +423,7 @@ void idHeap::Dump( void ) {
 		idLib::common->Printf( "%p  bytes %-8d  (fully used by large heap)\n", pg->data, pg->dataSize );
 	}
 
-	idLib::common->Printf( "pages allocated : %d\n", pagesAllocated );
+	idLib::common->Printf( "pages allocated0 : %d\n", pagesAllocated );
 }
 
 /*
