@@ -3168,11 +3168,6 @@ idFile *idFileSystemLocal::OpenFileReadFlags( const char *relativePath, int sear
 		return NULL;
 	}
 
-	// make sure the doomkey file is only readable by game at initialization
-	// any other time the key should only be accessed in memory using the provided functions
-	if( common->IsInitialized() && ( idStr::Icmp( relativePath, CDKEY_FILE ) == 0 || idStr::Icmp( relativePath, XPKEY_FILE ) == 0 ) ) {
-		return NULL;
-	}
 
 	//
 	// search through the path, one element at a time
@@ -3999,7 +3994,8 @@ bool idFileSystemLocal::HasD3XP( void ) {
 			}
 		}
 	}
-
+#endif
+	
 	// check for d3xp's d3xp/pak000.pk4 in any search path
 	// checking wether the pak is loaded by checksum wouldn't be enough:
 	// we may have a different fs_game right now but still need to reply that it's installed
