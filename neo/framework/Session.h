@@ -53,7 +53,6 @@ typedef enum {
 	MSG_OKCANCEL,
 	MSG_YESNO,
 	MSG_PROMPT,
-	MSG_CDKEY,
 	MSG_INFO,
 	MSG_WAIT
 } msgBoxType_t;

@@ -1308,32 +1308,6 @@ const char* idSessionLocal::MessageBox( msgBoxType_t type, const char *message, 
 			guiMsg->SetStateString( "visible_entry", "1" );			
 			guiMsg->HandleNamedEvent( "Prompt" );
 			break;
-		case MSG_CDKEY:
-			guiMsg->SetStateString( "left", common->GetLanguageDict()->GetString( "#str_04339" ) );
-			guiMsg->SetStateString( "right", common->GetLanguageDict()->GetString( "#str_04340" ) );
-			guiMsg->SetStateString( "visible_msgbox", "0" );
-			guiMsg->SetStateString( "visible_cdkey", "1" );
-			guiMsg->SetStateString( "visible_hasxp", fileSystem->HasD3XP() ? "1" : "0" );
-			// the current cdkey / xpkey values may have bad/random data in them
-			// it's best to avoid printing them completely, unless the key is good
-			if ( cdkey_state == CDKEY_OK ) {
-				guiMsg->SetStateString( "str_cdkey", cdkey );
-				guiMsg->SetStateString( "visible_cdchk", "0" );
-			} else {
-				guiMsg->SetStateString( "str_cdkey", "" );
-				guiMsg->SetStateString( "visible_cdchk", "1" );
-			}
-			guiMsg->SetStateString( "str_cdchk", "" );
-			if ( xpkey_state == CDKEY_OK ) {
-				guiMsg->SetStateString( "str_xpkey", xpkey );
-				guiMsg->SetStateString( "visible_xpchk", "0" );
-			} else {
-				guiMsg->SetStateString( "str_xpkey", "" );
-				guiMsg->SetStateString( "visible_xpchk", "1" );
-			}
-			guiMsg->SetStateString( "str_xpchk", "" );
-			guiMsg->HandleNamedEvent( "CDKey" );
-			break;
 		case MSG_WAIT:
 			break;
 		default:
@@ -1363,20 +1337,6 @@ const char* idSessionLocal::MessageBox( msgBoxType_t type, const char *message, 
 		if ( type == MSG_PROMPT ) {
 			if ( msgRetIndex == 0 ) {
 				guiMsg->State().GetString( "str_entry", "", msgFireBack[ 0 ] );
-				return msgFireBack[ 0 ].c_str();
-			} else {
-				return NULL;
-			}
-		} else if ( type == MSG_CDKEY ) {
-			if ( msgRetIndex == 0 ) {
-				// the visible_ values distinguish looking at a valid key, or editing it
-				sprintf( msgFireBack[ 0 ], "%1s;%16s;%2s;%1s;%16s;%2s",
-						 guiMsg->State().GetString( "visible_cdchk" ),
-						 guiMsg->State().GetString( "str_cdkey" ),
-						 guiMsg->State().GetString( "str_cdchk" ),
-						 guiMsg->State().GetString( "visible_xpchk" ),						 
-						 guiMsg->State().GetString( "str_xpkey" ),
-						 guiMsg->State().GetString( "str_xpchk" ) );
 				return msgFireBack[ 0 ].c_str();
 			} else {
 				return NULL;
