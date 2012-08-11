@@ -230,7 +230,9 @@ idHeap::~idHeap( void ) {
 	}
 	idLib::common->Printf( "pages allocated2 : %d\n", pagesAllocated );
 		//TODO more pages are freed than allocated!
-	assert( pagesAllocated <= 0 );
+        //if we remove this line we will get errors on closing files...
+    assert( pagesAllocated == 0 );
+
 }
 
 /*

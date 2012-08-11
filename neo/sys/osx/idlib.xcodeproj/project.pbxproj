@@ -928,7 +928,7 @@
 				LIBRARY_STYLE = STATIC;
 				PREBINDING = NO;
 				PRODUCT_NAME = idlib_pic;
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -955,7 +955,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = idlib_pic;
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 				SYMROOT = build;
 				ZERO_LINK = NO;
 			};
@@ -981,7 +981,7 @@
 					"$(OTHER_CFLAGS)",
 					"-fpermissive",
 				);
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 				USE_SEPARATE_HEADERMAPS = YES;
 				VALID_ARCHS = i386;
 			};
@@ -1006,7 +1006,7 @@
 					"$(OTHER_CFLAGS)",
 					"-fpermissive",
 				);
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 				USE_SEPARATE_HEADERMAPS = YES;
 				VALID_ARCHS = i386;
 			};
@@ -1029,7 +1029,7 @@
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = idlib_nopic;
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -1061,7 +1061,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = idlib_nopic;
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 				SYMROOT = build;
 				ZERO_LINK = NO;
 			};

@@ -428,7 +428,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PREBINDING = NO;
 				PRODUCT_NAME = oggVorbis_nopic;
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -456,7 +456,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = oggVorbis_nopic;
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 				SYMROOT = build;
 				ZERO_LINK = NO;
 			};

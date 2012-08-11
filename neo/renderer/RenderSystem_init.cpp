@@ -639,7 +639,12 @@ void R_InitOpenGL( void ) {
 
 		parms.width = glConfig.vidWidth;
 		parms.height = glConfig.vidHeight;
-		parms.fullScreen = r_fullscreen.GetBool();
+#ifdef MACOS_X
+           		parms.fullScreen = false;
+#else
+        		parms.fullScreen = r_fullscreen.GetBool();
+#endif
+
 		parms.displayHz = r_displayRefresh.GetInteger();
 		parms.multiSamples = r_multiSamples.GetInteger();
 		parms.stereo = false;

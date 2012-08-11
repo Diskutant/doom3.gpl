@@ -789,7 +789,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = game;
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -826,7 +826,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = game;
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 				SYMROOT = build;
 				ZERO_LINK = NO;
 			};

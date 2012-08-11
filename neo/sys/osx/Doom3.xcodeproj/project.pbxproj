@@ -1741,7 +1741,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "Doom 3";
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -1759,6 +1759,7 @@
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(MAIN_CPP_DEFINES)",
+					"ID_ENFORCE_KEY=0",
 					MACOS_X,
 					__DOOM_DLL__,
 					"ID_ENABLE_CURL=1",
@@ -1783,7 +1784,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "Doom 3";
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 				SYMROOT = build;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
